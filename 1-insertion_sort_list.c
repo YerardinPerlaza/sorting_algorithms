@@ -30,11 +30,11 @@ void insertion_sort_list(listint_t **list)
 {
 	listint_t *current, *temp;
 
-	current = *list;
-	temp = (*list)->next;
-
 	if (list == NULL || *list == NULL || (*list)->next == NULL)
 		return;
+
+	current = *list;
+	temp = (*list)->next;
 
 	while (temp != NULL)
 	{
@@ -45,6 +45,7 @@ void insertion_sort_list(listint_t **list)
 			if (current == NULL)
 				*list = temp;
 			print_list(*list);
+
 			while (current != NULL && current->n > temp->n)
 			{
 				swap(current, temp);
