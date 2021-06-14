@@ -1,4 +1,7 @@
 #include "sort.h"
+size_t partition(int *array, int lo, int hi, size_t size);
+void quick_sort(int *array, size_t size);
+
 /**
  * q_sort - quick sort implementation
  * @array: Array

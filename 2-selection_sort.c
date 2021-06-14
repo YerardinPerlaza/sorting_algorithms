@@ -10,13 +10,13 @@
 
 void selection_sort(int *array, size_t size)
 {
-int i,j;
-int temp; 
+size_t i,j;
+size_t temp;
 
     for (i = 0; i < size -1; i++)
     {
-        int jMin = i;
-        
+	    size_t jMin = i;
+
         for (j = i+1; j < size; j++)
         {
             if (array[j] < array[jMin])
