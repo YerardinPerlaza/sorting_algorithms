@@ -33,10 +33,17 @@ void counting_sort(int *array, size_t size)
 	int *count = malloc(sizeof(int) * max_k);
 	int *output = malloc(sizeof(int) * size);
 
-	if (!count || !output)
+	if (!count && !output)
+		return;
+	
+	if (!count && output)
+	{
+		free(output);
+		return;
+	}
+	if (count && !output)
 	{
 		free(count);
-		free(output);
 		return;
 	}
 
