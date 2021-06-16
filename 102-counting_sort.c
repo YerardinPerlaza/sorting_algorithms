@@ -39,18 +39,14 @@ void counting_sort(int *array, size_t size)
 
 	if (!array || size < 2)
 		return;
-	count = malloc(sizeof(int) * max_k);
+
 	output = malloc(sizeof(int) * size);
-	if (!count && !output)
+	if (!output)
 		return;
-	if (!count && output)
+	count = malloc(sizeof(int) * max_k);
+	if (!count)
 	{
 		free(output);
-		return;
-	}
-	if (count && !output)
-	{
-		free(count);
 		return;
 	}
 
