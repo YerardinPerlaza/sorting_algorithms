@@ -9,7 +9,10 @@
 
 int key_value(int *array, size_t size)
 {
-	int tmp = 0;
+	int tmp = array[0];
+
+	if (size == 0)
+		return (0);
 
 	for (int i = 0; i < (int)size; i++)
 	{
@@ -35,7 +38,7 @@ void counting_sort(int *array, size_t size)
 
 	if (!count && !output)
 		return;
-	
+
 	if (!count && output)
 	{
 		free(output);
@@ -51,7 +54,7 @@ void counting_sort(int *array, size_t size)
 		count[i] = 0;
 
 	for (i = 0; i < (int)size; i++)
-		count[array[i]]++;
+		++count[array[i]];
 
 	for (i = 1; i <= k; i++)
 		count[i] = count[i] + count[i - 1];
