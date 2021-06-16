@@ -10,11 +10,12 @@
 int key_value(int *array, size_t size)
 {
 	int tmp = array[0];
+	int i;
 
 	if (size == 0)
 		return (0);
 
-	for (int i = 0; i < (int)size; i++)
+	for (i = 0; i < (int)size; i++)
 	{
 		if (array[i] > tmp)
 			tmp = array[i];
