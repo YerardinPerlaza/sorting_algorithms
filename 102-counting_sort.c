@@ -54,10 +54,10 @@ void counting_sort(int *array, size_t size)
 		return;
 	}
 
-	for (i = 0; i < max_k; i++)
+	for (i = 0; i <= k; i++)
 		count[i] = 0;
 
-	for (i = 0; i < (int)size; i++)
+	for (i = 0; i <= (int)size - 1; i++)
 		++count[array[i]];
 
 	for (i = 1; i <= k; i++)
