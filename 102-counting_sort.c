@@ -34,8 +34,14 @@ void counting_sort(int *array, size_t size)
 {
 	int k = key_value(array, size);
 	int max_k = k + 1, i = 0;
-	int *count = malloc(sizeof(int) * max_k);
-	int *output = malloc(sizeof(int) * size);
+	int *count;
+	int *output;
+
+	if (!array || size < 2)
+		return;
+
+	count = malloc(sizeof(int) * max_k);
+	output = malloc(sizeof(int) * size);
 
 	if (!count && !output)
 		return;
